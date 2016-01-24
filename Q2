@@ -1,0 +1,19 @@
+import math
+
+def find_primes():
+    prime_list = [2]
+    for a in range(3, 105000):
+        if len(prime_list) <= 10001:
+            prime = True
+            for b in range(2, math.ceil(math.sqrt(a)) + 1):
+                if a % b == 0:
+                    prime = False
+                    break
+            if prime:
+                prime_list.append(a)
+        else:
+            break
+    return prime_list
+
+prime_list = find_primes()
+print("3rd prime: %d; 58th prime: %d; 10001th prime: %d" % (prime_list[2], prime_list[57], prime_list[10000]))
