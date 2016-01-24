@@ -6,7 +6,6 @@ def sort(L):
     while L:
         m = L[0]
         for i in range(0, len(L)):
-            
             if L[i] < m:
                 m = L[i]
         res.append(m)
